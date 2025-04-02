@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        .main-content{
+            min-height: 100vh; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div>
+        <div id="Sidebar-container"></div>
+    </div>    
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <main class="col-md-12 ms-sm-auto px-md-4 mt-4 main-content">
+                <!-- Header -->
+                <h2 class="mb-4">Manage Courses</h2>
+
+                <!-- Add New Course Section -->
+                <div class="mb-4">
+                    <form id="addCourseForm" class="border p-3 rounded">
+                        <div class="mb-3">
+                            <label for="courseName" class="form-label">Course Name</label>
+                            <input type="text" class="form-control" id="courseName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseCategory" class="form-label">Category</label>
+                            <select class="form-select" id="courseCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="Programming">Programming</option>
+                                <option value="Design">Design</option>
+                                <option value="Marketing">Marketing</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseInstructor" class="form-label">Instructor</label>
+                            <input type="text" class="form-control" id="courseInstructor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="coursePrice" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="coursePrice" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseStatus" class="form-label">Status</label>
+                            <select class="form-select" id="courseStatus" required>
+                                <option value="Published">Published</option>
+                                <option value="Draft">Draft</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Course</button>
+                    </form>
+                </div>
+
+                <!-- Courses Table -->
+         </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

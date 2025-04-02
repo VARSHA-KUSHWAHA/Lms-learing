@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Course</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+
+
+  <style>
+    /* Custom Styling */
+    .form-container {
+      max-width: 600px;
+      margin: 70px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .form-header {
+      background-color: #152d45;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+
+  <div id="Header-container"></div> <br><br>
+  <div class="container">
+    <main class="main-content mb-5">
+      <!-- Add New Course Form -->
+      <div class="form-container mt-4">
+        <div class="form-header">
+          <h5 class="mb-0">Add New Course</h5>
+        </div>
+        <form id="addCourseForm">
+          <!-- Course Title -->
+          <div class="mb-3">
+            <label for="courseTitle" class="form-label">Course Title</label>
+            <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title" required>
+          </div>
+
+          <!-- Course Description -->
+          <div class="mb-3">
+            <label for="courseDescription" class="form-label">Course Description</label>
+            <textarea class="form-control" id="courseDescription" rows="3" placeholder="Enter course description" required></textarea>
+          </div>
+
+          <!-- Course Duration -->
+          <div class="mb-3">
+            <label for="courseDuration" class="form-label">Duration (in weeks)</label>
+            <input type="number" class="form-control" id="courseDuration" placeholder="Enter course duration" required>
+          </div>
+
+          <!-- Course Image URL -->
+          <div class="mb-3">
+            <label for="courseImage" class="form-label">Course Image URL</label>
+            <input type="url" class="form-control" id="courseImage" placeholder="Enter image URL">
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100" style="background-color: #152d45;">Save Course</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Handle form submission
+    const addCourseForm = document.getElementById('addCourseForm');
+    addCourseForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const courseTitle = document.getElementById('courseTitle').value;
+      const courseDescription = document.getElementById('courseDescription').value;
+      const courseDuration = document.getElementById('courseDuration').value;
+      const courseImage = document.getElementById('courseImage').value;
+
+      console.log({
+        title: courseTitle,
+        description: courseDescription,
+        duration: courseDuration,
+        image: courseImage || 'No Image URL',
+      });
+
+      // Reset the form
+      addCourseForm.reset();
+      alert('Course saved successfully!');
+    });
+  </script>
+
+  <!-- Footer Section -->
+ 
+  <div id="testfooter-container"></div>
+</body>
+
+</html>

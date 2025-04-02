@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+        :root{--header-height: 3rem;--nav-width: 68px;--first-color:#152d45;--first-color-light: white;
+        --white-color: #152d45;--body-font: 'Nunito', sans-serif;--normal-font-size: 1rem;--z-fixed: 100}*,
+        ::before,::after{box-sizing: border-box}body{position: relative;margin: var(--header-height) 0 0 0;
+        padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}a{text-decoration: none}
+        .header{width: 100%;height: var(--header-height);position: fixed;top: 0;left: 0;display: flex;align-items: center;justify-content: 
+        space-between;padding: 0 1rem;background-color: var(--white-color);z-index: var(--z-fixed);transition: .5s}.header_toggle{color: var(--first-color);font-size: 1.5rem;cursor: pointer}
+        .header_img{width: 35px;height: 35px;display: 
+        flex;justify-content: center;border-radius: 50%;overflow: hidden}.l-navbar{position: fixed;top: 0;left: -30%;width: var(--nav-width);height: 100vh;
+        background-color: var(--first-color);padding: .5rem 1rem 0 0;transition: .5s;z-index: var(--z-fixed)}.nav{height: 100%;display: 
+        flex;flex-direction: column;justify-content: space-between;overflow: hidden}.nav_logo, .nav_link{display: grid;grid-template-columns: max-content max-content;
+        align-items: center;column-gap: 1rem;padding: .5rem 0 .5rem 1.5rem}.nav_logo{margin-bottom: 2rem}.nav_logo-icon{font-size: 1.25rem;color: var(--white-color)}
+        .nav_logo-name{color: var(--white-color);font-weight: 700}.nav_link{position: relative;color: var(--first-color-light);margin-bottom: 1.5rem;transition: .3s}
+        .nav_link:hover{color: var(--white-color)}.nav_icon{font-size: 1.25rem}.show{left: 0}
+        .body-pd{padding-left: calc(var(--nav-width) + 1rem)}.active{color: var(--white-color)}
+        .active::before{content: '';
+        position: absolute;left: 0;width: 2px;height: 32px;background-color: var(--white-color)}
+        .height-100{height:100vh}@media screen and (min-width: 768px){body{margin: calc(var(--header-height) + 1rem) 0 0 0;padding-left: calc(var(--nav-width) + 2rem)}
+        .header{height: calc(var(--header-height) + 1rem);padding: 0 2rem 0 calc(var(--nav-width) + 2rem)}.header_img{width: 40px;height: 40px}
+        .header_img img{width: 45px}.l-navbar{left: 0;padding: 1rem 1rem 0 0}.show{width: calc(var(--nav-width) + 156px)}.body-pd{padding-left: calc(var(--nav-width) + 188px)}}
+    /* Ensure dropdown menu is hidden by default */
+        .dropdown-menu {
+                display: none;
+                position: absolute;
+                top: 100%; /* Position the dropdown below the logo */
+                left: 0;
+                z-index: 1000;
+            }
+
+            /* Show dropdown menu when hovering over the SVG */
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            /* Optional: Add hover effects for the SVG (logo) */
+            .dropdown-toggle-icon:hover {
+                cursor: pointer;
+                fill: #f8f9fa; /* Change logo color on hover */
+            }
+            .nav_name{
+                color:white;
+            }
+            .nav_icon{
+                color:white;
+            }
+        </style>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" style="color:white"></i> </div>
+        <div class="dropdown d-flex align-items-center">
+            <span class="me-2" style="color:white"><b>Admin</b></span>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 width="20" 
+                 height="20" 
+                 fill="currentColor" 
+                 class="bi bi-universal-access-circle dropdown-toggle-icon" 
+                 viewBox="0 0 16 16" style="color:white">
+                <path d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143m-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z"/>
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8"/>
+            </svg>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="Profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+
+      </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav content-open">
+            <div>
+                <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name" style="color:white">Admin</span> </a>
+                <div class="nav_list">
+                    <a href="Adashboard.html" class="nav_link"> <i class='bx bxs-detail nav_icon'></i> <span class="nav_name">Admin Dashboard</span> </a>
+                    <a href="Student.html" class="nav_link"> <i class='bx bxs-contact nav_icon'></i> <span class="nav_name">Student info</span> </a>
+                    <a href="Teacherinfo.html" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Teacher info</span> </a>
+                    <a href="Courses.html" class="nav_link"> <i class='bx bx-id-card nav_icon'></i> <span class="nav_name">Manage Courses</span> </a>
+                    <a href="setting.html" class="nav_link"> <i class='bx bx-cog nav_icon'></i> <span class="nav_name">setting</span> </a>    
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        // Sidebar toggle functionality
+        const showNavbar = (toggleId, navId, bodyId, headerId) => {
+            const toggle = document.getElementById(toggleId),
+                  nav = document.getElementById(navId),
+                  bodypd = document.getElementById(bodyId),
+                  headerpd = document.getElementById(headerId);
+
+            // Ensure the sidebar is open by default on page load
+            if (nav) {
+                nav.classList.add('show'); // Add the 'show' class to display the sidebar
+            }
+            if (bodypd) {
+                bodypd.classList.add('body-pd'); // Add padding to the body
+            }
+            if (headerpd) {
+                headerpd.classList.add('body-pd'); // Add padding to the header
+            }
+
+            if (toggle && nav && bodypd && headerpd) {
+                toggle.addEventListener('click', () => {
+                    nav.classList.toggle('show'); // Toggle the 'show' class for sidebar
+                    toggle.classList.toggle('bx-x'); // Toggle the icon state
+                    bodypd.classList.toggle('body-pd'); // Toggle padding for body
+                    headerpd.classList.toggle('body-pd'); // Toggle padding for header
+                });
+            }
+        };
+        showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header');
+
+        // Dropdown functionality
+        var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+        var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+            // Initialize Bootstrap Dropdown
+            const dropdown = new bootstrap.Dropdown(dropdownToggleEl);
+            // Open dropdown by default on page load
+            const parent = dropdownToggleEl.parentElement; // Get the parent dropdown container
+            if (parent && parent.classList.contains('dropdown')) {
+                parent.classList.add('show'); // Add 'show' class to parent
+                const menu = parent.querySelector('.dropdown-menu'); // Find the dropdown menu
+                if (menu) {
+                    menu.classList.add('show'); // Add 'show' class to menu
+            
+                }
+            }
+
+            return dropdown; // Return initialized dropdown
+        
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
