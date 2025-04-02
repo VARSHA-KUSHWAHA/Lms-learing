@@ -144,14 +144,13 @@
                 <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
             </div>
             <div class="mb-3">
-                <label for="grade" class="form-label">Grade</label>
+                <label for="grade" class="form-label">type </label>
                 <select class="form-select" id="grade" required>
                 <option selected disabled>Choose your grade</option>
-                <option value="1">Grade 1</option>
-                <option value="2">Grade 2</option>
-                <option value="3">Grade 3</option>
-                <option value="4">Grade 4</option>
-                <option value="5">Grade 5</option>
+                <option value="1">Admin </option>
+                <option value="2">Teacher</option>
+                <option value="3" >Student </option>
+               
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100">Register</button>
@@ -161,7 +160,24 @@
             </div>
         </div>
 
-
+        <script>
+            document.querySelector("form").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent default form submission
+          
+              let selectedRole = document.getElementById("grade").value;
+          
+              if (selectedRole == "1") {
+                window.location.href = "login.html"; // Redirect to Admin login
+              } else if (selectedRole == "2") {
+                window.location.href = "./Teacher/login.html"; // Redirect to Teacher login
+              } else if (selectedRole == "3") {
+                window.location.href = "./Student/login.html"; // Redirect to Student login
+              } else {
+                alert("Please select a valid role.");
+              }
+            });
+          </script>
+          
 
     <!-- sign in end -->
             <!-- footer start -->

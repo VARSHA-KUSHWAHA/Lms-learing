@@ -1,29 +1,35 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- Header -->
-  <div id="Sidebar-container"></div>
+  <div id="Header-container"></div>
 
   <div class="container-fluid">
     <div class="row">
       <!-- Main Content Section -->
       <div class="col-sm-12 col-md-10 mt-2 p-4">
       <!-- Profile Settings -->
-  <div class="card mb-4">
+        <div class="card mb-4">
           <div class="card-header">
             <h4>Profile Settings</h4>
           </div>
           <div class="card-body">
-            <form>
+            <form id="profileForm">
+              <div class="mb-3 text-center">
+                <img id="profilePreview" src="default-profile.png" class="img-fluid rounded-circle" width="150" alt="Profile Picture">
+              </div>
+              <div class="mb-3">
+                <label for="profilePhoto" class="form-label">Upload Profile Picture</label>
+                <input type="file" class="form-control" id="profilePhoto" accept="image/*">
+              </div>
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" placeholder="John Doe">
@@ -62,9 +68,21 @@
   </div>
   
   <!-- Footer -->
-  <div id="Afooter-container"></div>
+  <div id="Footer-container"></div>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('profilePhoto').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('profilePreview').src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
 </body>
 </html>
